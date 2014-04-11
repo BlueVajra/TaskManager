@@ -1,0 +1,20 @@
+<!DOCTYPE>
+<html>
+<head>
+  <title>Sinatra App with DB</title>
+</head>
+<body>
+<h1>Awesome Item List</h1>
+<form action="/" method="post">
+  <input type="text" name="add_item">
+  <input type="submit" value="Submit">
+</form>
+
+<ul>
+  <% tasks.each do |task| %>
+    <li><%= task[:task] %></li>
+  <% end %>
+</ul>
+
+</body>
+</html>
