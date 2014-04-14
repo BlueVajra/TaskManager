@@ -20,5 +20,28 @@ feature "Manages Items" do
 
   end
 
+  scenario "User deletes items to list" do
+
+    visit '/'
+
+    fill_in "add_item", with: "First Item"
+    click_on "Submit"
+    fill_in "add_item", with: "Second Item"
+    click_on "Submit"
+    fill_in "add_item", with: "Third Item"
+    click_on "Submit"
+
+    expect(page).to have_content("Second Item")
+
+    within('li:nth-child(2)') do
+      click_on "Delete"
+    end
+
+    expect(title).to have_content("Sinatra App with DB")
+
+    expect(page).to_not have_content("Second Item")
+
+  end
+
 end
 

@@ -12,7 +12,7 @@
 
 <ul>
   <% tasks.each do |task| %>
-    <li><%= task[:task] %></li>
+    <li><form action="/delete/<%= task[:id] %>" method="post"><input type=hidden name="_method" value="delete"><%= task[:task] %><input type="submit" value="Delete"></form></li>
   <% end %>
 </ul>
 
