@@ -1,0 +1,50 @@
+
+
+.task_container {
+    width: 90%;
+    max-width: 800px;
+    margin: 2em auto;
+}
+
+.task_list, .add_task {
+    margin: 0;
+    padding: 0;
+}
+
+.task_list li, .add_task li {
+    list-style: none;
+    width: 100%;
+    padding: 5px;
+    margin: .3em 0;
+    border: 3px solid lightsteelblue;
+    background-color:#ddeeff;
+    font-size: 1.2em;
+}
+
+.task_list li span,
+.add_task input[type="text"]{
+    width: 80%;
+}
+
+
+.add_task input[type="submit"] {
+    -webkit-appearance: text;
+    background: none;
+    margin: 0;
+    border: 0;
+    color: whitesmoke;
+    background-color:darkblue;
+    float: right;
+    width:5em;
+}
+
+.task_list input[type="submit"] {
+    -webkit-appearance: text;
+    background: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: red;
+    float: right;
+    width:5em;
+}

@@ -1,20 +1,19 @@
-<!DOCTYPE>
-<html>
-<head>
-  <title>Sinatra App with DB</title>
-</head>
-<body>
-<h1>Awesome Item List</h1>
-<form action="/" method="post">
-  <input type="text" name="add_item">
-  <input type="submit" value="Submit">
-</form>
 
-<ul>
+<h1>Awesome Item List</h1>
+
+
+<div class="task_container">
+  <h3>Add a Task</h3>
+<ul class="add_task">
+<li><form action="/" method="post">
+  <input type="text" name="add_item"><input type="submit" value="Submit">
+</form></li>
+</ul>
+  <h3>My Task List</h3>
+<ul class="task_list">
   <% tasks.each do |task| %>
-    <li><form action="/delete/<%= task[:id] %>" method="post"><input type=hidden name="_method" value="delete"><%= task[:task] %><input type="submit" value="Delete"></form></li>
+    <li><form action="/delete/<%= task[:id] %>" method="post"><input type=hidden name="_method" value="delete"><span class="task"><%= task[:task] %></span><input type="submit" value="Delete"></form></li>
   <% end %>
 </ul>
+</div>
 
-</body>
-</html>

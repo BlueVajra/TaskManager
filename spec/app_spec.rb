@@ -37,8 +37,6 @@ feature "Manages Items" do
       click_on "Delete"
     end
 
-    expect(title).to have_content("Sinatra App with DB")
-
     expect(page).to_not have_content("Second Item")
 
   end
