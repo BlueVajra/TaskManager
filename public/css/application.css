@@ -19,11 +19,18 @@
     border: 3px solid lightsteelblue;
     background-color:#ddeeff;
     font-size: 1.2em;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+li .completed{
+    color:slategray;
+    text-decoration: line-through;
 }
 
-.task_list li span,
+.task_list li .task,
 .add_task input[type="text"]{
-    width: 80%;
+    width: 70%;
 }
 
 
@@ -34,17 +41,29 @@
     border: 0;
     color: whitesmoke;
     background-color:darkblue;
-    float: right;
+    float:right;
     width:5em;
 }
-
+.task_list .buttons{
+    float:right;
+}
 .task_list input[type="submit"] {
+
     -webkit-appearance: text;
     background: none;
     margin: 0;
     padding: 0;
     border: 0;
     color: red;
-    float: right;
     width:5em;
+    float:right;
+}
+.task_list input[type="checkbox"] {
+    background: none;
+    margin: 0;
+    margin-right:.2em;
+    padding: 0;
+    margin-bottom:5px;
+    outline: 2px solid darkslategray;
+
 }

@@ -41,5 +41,44 @@ feature "Manages Items" do
 
   end
 
+  scenario "User can complete a task" do
+    visit '/'
+
+    fill_in "add_item", with: "First Item"
+    click_on "Submit"
+    fill_in "add_item", with: "Second Item"
+    click_on "Submit"
+    fill_in "add_item", with: "Third Item"
+    click_on "Submit"
+
+    within('li:nth-child(2)') do
+      click_on "Complete"
+    end
+    expect(page).to have_css("li.completed")
+
+  end
+
+  scenario "User can un-complete a task" do
+    visit '/'
+
+    fill_in "add_item", with: "First Item"
+    click_on "Submit"
+    fill_in "add_item", with: "Second Item"
+    click_on "Submit"
+    fill_in "add_item", with: "Third Item"
+    click_on "Submit"
+
+    within('li:nth-child(2)') do
+      click_on "Complete"
+    end
+
+    expect(page).to have_css("li.completed")
+    within('li.completed') do
+      click_on "Complete"
+    end
+    expect(page).to_not have_css("li.completed")
+
+  end
+
 end
 

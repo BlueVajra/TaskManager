@@ -16,5 +16,10 @@ class App < Sinatra::Application
     redirect '/'
   end
 
+  put '/complete/:id' do
+    TASKS.complete(params[:id])
+    redirect '/'
+  end
+
 
 end

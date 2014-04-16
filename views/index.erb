@@ -1,19 +1,33 @@
-
 <h1>Awesome Item List</h1>
 
 
 <div class="task_container">
   <h3>Add a Task</h3>
-<ul class="add_task">
-<li><form action="/" method="post">
-  <input type="text" name="add_item"><input type="submit" value="Submit">
-</form></li>
-</ul>
+  <ul class="add_task">
+    <li>
+      <form action="/" method="post">
+        <input type="text" name="add_item"><input type="submit" value="Submit">
+      </form>
+    </li>
+  </ul>
   <h3>My Task List</h3>
-<ul class="task_list">
-  <% tasks.each do |task| %>
-    <li><form action="/delete/<%= task[:id] %>" method="post"><input type=hidden name="_method" value="delete"><span class="task"><%= task[:task] %></span><input type="submit" value="Delete"></form></li>
-  <% end %>
-</ul>
+  <ul class="task_list">
+    <% tasks.each do |task| %>
+      <% task[:completed] ? done = "completed" : done = "" %>
+      <li class="<%= done %>">
+        <form action="/complete/<%= task[:id] %>" method="post">
+          <input type=hidden name="_method" value="put">
+          <input type="submit" value="Complete">
+        </form>
+        <form action="/delete/<%= task[:id] %>" method="post">
+          <input type=hidden name="_method" value="delete">
+          <input type="submit" value="Delete">
+        </form>
+        <div class="task"><%= task[:task] %></div>
+      </li>
+    <% end %>
+  </ul>
 </div>
+
+
 

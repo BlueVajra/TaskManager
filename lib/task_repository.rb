@@ -14,6 +14,24 @@ class TaskRepository
   end
 
   def delete(id)
-    @db.where('id =?', id).delete
+    get(id).delete
+  end
+
+  def find(id)
+    #@db.where('id =?', id)
+    @db[id: id]
+  end
+
+  def completed?(id)
+    @db[id: id][:completed]
+  end
+
+  def complete(id)
+    completed?(id) ? get(id).update(completed:false) : get(id).update(completed:true)
+  end
+
+  private
+  def get(id)
+    @db.where('id =?', id)
   end
 end
