@@ -52,7 +52,7 @@ feature "Manages Items" do
     click_on "Submit"
 
     within('li:nth-child(2)') do
-      click_on "Complete"
+      click_on "&#x2713;"
     end
     expect(page).to have_css("li.completed")
 
@@ -69,12 +69,12 @@ feature "Manages Items" do
     click_on "Submit"
 
     within('li:nth-child(2)') do
-      click_on "Complete"
+      click_on "&#x2713;"
     end
 
     expect(page).to have_css("li.completed")
     within('li.completed') do
-      click_on "Complete"
+      click_on "&#x2713;"
     end
     expect(page).to_not have_css("li.completed")
 

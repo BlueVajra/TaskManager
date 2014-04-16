@@ -23,7 +23,7 @@
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
-li .completed{
+li.completed{
     color:slategray;
     text-decoration: line-through;
 }
@@ -47,6 +47,9 @@ li .completed{
 .task_list .buttons{
     float:right;
 }
+.task{
+    margin-left:2em;
+}
 .task_list input[type="submit"] {
 
     -webkit-appearance: text;
@@ -58,12 +61,25 @@ li .completed{
     width:5em;
     float:right;
 }
-.task_list input[type="checkbox"] {
-    background: none;
-    margin: 0;
-    margin-right:.2em;
-    padding: 0;
-    margin-bottom:5px;
-    outline: 2px solid darkslategray;
 
+.task_list .checkmark input[type="submit"] {
+
+    border: 2px solid darkslategray;
+    color: lightgray;
+    width:1.2em;
+    height:1.2em;
+    float:left;
+    font-size:1.2em;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
 }
+.task_list li.completed .checkmark input[type="submit"] {
+    color: darkblue;
+    width:1.2em;
+    height:1.2em;
+    float:left;
+    font-size:1.2em;
+    /*border:1px solid red*/
+}
+

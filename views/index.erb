@@ -15,9 +15,9 @@
     <% tasks.each do |task| %>
       <% task[:completed] ? done = "completed" : done = "" %>
       <li class="<%= done %>">
-        <form action="/complete/<%= task[:id] %>" method="post">
+        <form action="/complete/<%= task[:id] %>" method="post" class="checkmark">
           <input type=hidden name="_method" value="put">
-          <input type="submit" value="Complete">
+          <input type="submit" value="&#x2713;">
         </form>
         <form action="/delete/<%= task[:id] %>" method="post">
           <input type=hidden name="_method" value="delete">
