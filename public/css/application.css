@@ -1,5 +1,4 @@
 
-
 .task_container {
     width: 90%;
     max-width: 800px;
@@ -17,22 +16,22 @@
     padding: 5px;
     margin: .3em 0;
     border: 3px solid lightsteelblue;
-    background-color:#ddeeff;
+    background-color: #ddeeff;
     font-size: 1.2em;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
-li.completed{
-    color:slategray;
+
+li.completed {
+    color: slategray;
     text-decoration: line-through;
 }
 
 .task_list li .task,
-.add_task input[type="text"]{
+.add_task input[type="text"] {
     width: 70%;
 }
-
 
 .add_task input[type="submit"] {
     -webkit-appearance: text;
@@ -40,16 +39,19 @@ li.completed{
     margin: 0;
     border: 0;
     color: whitesmoke;
-    background-color:darkblue;
-    float:right;
-    width:5em;
+    background-color: darkblue;
+    float: right;
+    width: 5em;
 }
-.task_list .buttons{
-    float:right;
+
+.task_list .buttons {
+    float: right;
 }
-.task{
-    margin-left:2em;
+
+.task {
+    margin-left: 2em;
 }
+
 .task_list input[type="submit"] {
 
     -webkit-appearance: text;
@@ -58,28 +60,31 @@ li.completed{
     padding: 0;
     border: 0;
     color: red;
-    width:5em;
-    float:right;
+    width: 5em;
+    float: right;
 }
 
 .task_list .checkmark input[type="submit"] {
 
-    border: 2px solid darkslategray;
+    border: 3px solid darkslategray;
     color: lightgray;
-    width:1.2em;
-    height:1.2em;
-    float:left;
-    font-size:1.2em;
+    width: 1.2em;
+    height: 1.2em;
+    float: left;
+    font-size: 1.2em;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+    margin-top: -2px;
 }
+
 .task_list li.completed .checkmark input[type="submit"] {
+
     color: darkblue;
-    width:1.2em;
-    height:1.2em;
-    float:left;
-    font-size:1.2em;
+    width: 1.2em;
+    height: 1.2em;
+    float: left;
+    font-size: 1.2em;
     /*border:1px solid red*/
 }
 
