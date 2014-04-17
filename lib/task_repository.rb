@@ -1,8 +1,11 @@
 require 'sequel'
+require 'singleton'
 
 class TaskRepository
-  def initialize(db)
-    @db = db[:tasks]
+  include Singleton
+
+  def initialize
+    @db = DB[:tasks]
   end
 
   def add(task)

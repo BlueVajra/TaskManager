@@ -3,44 +3,33 @@ require 'task_repository'
 
 describe TaskRepository do
 
+  let(:repo) {TaskRepository.instance }
+  let(:baz) { repo.find(repo.add("baz"))}
+
   before :each do
     DB[:tasks].delete
+
+    repo.add("foo")
+    repo.add("bar")
   end
 
   it "adds and retrieves tasks" do
-
-    repo = TaskRepository.new(DB)
-    repo.add("First Item")
-    repo.add("Second Item")
-    repo.add("Third Item")
-
-    expect(repo.tasks[1][:task]).to eq "Second Item"
+    expect(repo.tasks[0][:task]).to eq "foo"
   end
 
   it "deletes tasks" do
-    repo = TaskRepository.new(DB)
-    repo.add("First Item")
-    return_id = repo.add("Second Item")
-    repo.add("Third Item")
-
-    repo.delete(return_id)
-
-    expect(repo.tasks[1][:task]).to eq "Third Item"
-
+    repo.delete(baz)
+    expect(repo.tasks).to not_contain(baz)
   end
 
   it "completes and undeletes tasks" do
-    repo = TaskRepository.new(DB)
-    repo.add("First Item")
-    repo.add("Second Item")
-    return_id = repo.add("Third Item")
 
-    repo.complete(return_id)
-    actual = repo.completed?(return_id)
+    repo.complete(baz[:id])
+    actual = repo.completed?(baz[:id])
     expect(actual).to eq true
 
-    repo.complete(return_id)
-    actual = repo.completed?(return_id)
+    repo.complete(baz[:id])
+    actual = repo.completed?(baz[:id])
     expect(actual).to eq false
   end
 
