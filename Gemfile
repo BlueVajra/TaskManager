@@ -6,5 +6,7 @@ gem 'capybara', '~> 2.2.1'
 
 gem 'sequel', '~> 4.9.0'
 gem 'pg', '~> 0.17.1'
+gem 'rerun', '~> 0.9.0'
+
 
 gem 'dotenv', '~> 0.10.0'
