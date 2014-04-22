@@ -1,7 +1,5 @@
 require_relative 'app'
 require 'sequel'
-require_relative 'lib/task_repository'
-require_relative 'lib/project_repository'
 
 require 'dotenv'
 

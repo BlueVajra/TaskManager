@@ -3,5 +3,5 @@ class Project < Sequel::Model(:projects)
 end
 
 class Task < Sequel::Model(:tasks)
-  many_to_one :projects
+  many_to_one :project
 end

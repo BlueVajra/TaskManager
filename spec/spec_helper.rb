@@ -1,12 +1,11 @@
 ENV['RACK_ENV'] = 'test'
 require 'sequel'
 require 'dotenv'
-require_relative '../lib/task_repository'
-require_relative '../lib/project_repository'
-
 
 Dotenv.load
 DB = Sequel.connect(ENV['DATABASE_URL_TEST'])
+
+require_relative '../lib/model_repository'
 
 RSpec.configure do |config|
   config.treat_symbols_as_metadata_keys_with_true_values = true

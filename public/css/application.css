@@ -1,51 +1,83 @@
-* {
+*,
+*:before,
+*:after {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    /*overflow: hidden;*/
 }
 
-html{
-    font-size:16px;
+html {
+    font-size: 16px;
 }
 
 .project_container {
     width: 40%;
-    padding:1em;
+    padding: 1em;
     float: left;
 }
 
 .task_container {
     width: 60%;
-    padding:1em;
+    padding: 1em;
     float: left;
 }
 
-@media all and (max-width: 900px){
+header {
+    background-color: steelblue;
+    padding: 1em;
+    margin: 0;
+}
+
+nav {
+    background-color: lightsteelblue;
+    margin: 0;
+}
+
+nav ul {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    list-style-type: none;
+    display: block;
+}
+
+nav a {
+    display: block;
+    float: left;
+    padding: .5em;
+    background-color: darkgrey;
+}
+
+@media all and (max-width: 900px) {
     html {
-        font-size:14px;
+        font-size: 14px;
     }
 }
 
-@media all and (max-width: 700px){
-    html{
-        font-size:12px;
+@media all and (max-width: 700px) {
+    html {
+        font-size: 12px;
     }
+
     .project_container {
         width: 100%;
-        float:none;
+        float: none;
     }
+
     .task_container {
         width: 100%;
-        float:none;
+        float: none;
     }
 }
 
-@media all and (max-width: 500px){
-    html{
-        font-size:10px;
-    }
-}
+/*@media all and (max-width: 500px){*/
+/*html{*/
+/*font-size:10px;*/
+/*}*/
+/*}*/
 
 .task_list, .add_task, .add_project, .project_list {
     margin: 0;
@@ -61,18 +93,20 @@ html{
     list-style: none;
     font-size: 1.2em;
     padding: 5px;
+    margin: .3em 0;
 }
+
 /* responsive text boxes */
-.add_project li form{
-    width:100%;
-    overflow:hidden;
-    padding-right:6.5em;
-    position:relative;
+.add_project li form {
+    width: 100%;
+    overflow: hidden;
+    padding-right: 6.5em;
+    position: relative;
 }
 
 .add_project input[type="text"] {
-    width:100%;
-    float:left;
+    width: 100%;
+    float: left;
 }
 
 .add_project input[type="submit"] {
@@ -82,9 +116,10 @@ html{
     color: whitesmoke;
     background-color: darkblue;
     width: 6em;
-    position:absolute;
-    right:0;
+    position: absolute;
+    right: 0;
 }
+
 /* -------  */
 
 .task_list li, .add_task li {
@@ -105,20 +140,20 @@ li.completed {
     text-decoration: line-through;
 }
 
-.task_list li .task{
+.task_list li .task {
     width: 100%;
 }
 
-.add_task li form{
-    width:100%;
-    overflow:hidden;
-    padding-right:5.5em;
-    position:relative;
+.add_task li form {
+    width: 100%;
+    overflow: hidden;
+    padding-right: 5.5em;
+    position: relative;
 }
 
 .add_task input[type="text"] {
-    width:100%;
-    float:left;
+    width: 100%;
+    float: left;
 }
 
 .add_task input[type="submit"] {
@@ -129,8 +164,8 @@ li.completed {
     color: whitesmoke;
     background-color: darkblue;
     width: 5em;
-    position:absolute;
-    right:0;
+    position: absolute;
+    right: 0;
 }
 
 .task_list .buttons {

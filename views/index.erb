@@ -1,54 +1,22 @@
-<h1>Awesome Item List</h1>
-<h2>Current Project: <%= current_project_name %></h2>
-
-<div class="body_container">
-  <div class="project_container">
-    <h3>Add a Project</h3>
-    <ul class="add_project">
-      <li>
-        <form action="/project/new" method="post">
-          <input type="text" name="add_project"><input type="submit" value="Add Project">
-        </form>
+<div class="project_container">
+  <h3>Add a Project</h3>
+  <ul class="add_project">
+    <li>
+      <form action="/project/new" method="post">
+        <input type="text" name="add_project"><input type="submit" value="Add Project">
+      </form>
+    </li>
+  </ul>
+  <h3>My Project List</h3>
+  <ul class="project_list">
+    <% projects.each do |project| %>
+      <li class="project">
+        <a href="/project/<%= project[:project_id] %>/current"><%= project[:project_name] %></a>
       </li>
-    </ul>
-    <h3>My Project List</h3>
-    <ul class="project_list">
-      <% projects.each do |project| %>
-        <li class="project">
-          <a href="/project/<%= project[:project_id] %>/current"><%= project[:project_name] %></a>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-
-  <div class="task_container">
-    <h3>Add a Task</h3>
-    <ul class="add_task">
-      <li>
-        <form action="/task/new" method="post">
-          <input type="text" name="add_item"><input type="submit" value="Submit">
-        </form>
-      </li>
-    </ul>
-    <h3>My Task List</h3>
-    <ul class="task_list">
-      <% tasks.each do |task| %>
-        <% task[:completed] ? done = "completed" : done = "" %>
-        <li class="<%= done %>">
-          <form action="/complete/<%= task[:id] %>" method="post" class="checkmark">
-            <input type=hidden name="_method" value="put">
-            <input type="submit" value="X">
-          </form>
-          <form action="/delete/<%= task[:id] %>" method="post">
-            <input type=hidden name="_method" value="delete">
-            <input type="submit" value="Delete">
-          </form>
-          <div class="task"><%= task[:task] %></div>
-        </li>
-      <% end %>
-    </ul>
-  </div>
+    <% end %>
+  </ul>
 </div>
+
 
 
 
