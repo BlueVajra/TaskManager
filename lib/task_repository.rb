@@ -1,4 +1,3 @@
-require 'sequel'
 require 'singleton'
 
 class TaskRepository
@@ -8,8 +7,8 @@ class TaskRepository
     @db = DB[:tasks]
   end
 
-  def add(task)
-    @db.insert(task: task)
+  def add(task, project_id = 1)
+    @db.insert(task: task, project_id: project_id)
   end
 
   def tasks

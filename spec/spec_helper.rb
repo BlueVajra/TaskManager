@@ -2,6 +2,8 @@ ENV['RACK_ENV'] = 'test'
 require 'sequel'
 require 'dotenv'
 require_relative '../lib/task_repository'
+require_relative '../lib/project_repository'
+
 
 Dotenv.load
 DB = Sequel.connect(ENV['DATABASE_URL_TEST'])
